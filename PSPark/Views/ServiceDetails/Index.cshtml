@@ -1,0 +1,57 @@
+﻿@model IEnumerable<PSPark.Models.ServiceDetail>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@*@html.actionlink("add details of servicing", "new")*@
+
+<table class="table table-bordered table-striped">
+
+    <thead>
+        <tr>
+            <th>Service Name</th>
+            <th>Service Price Price</th>
+           
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+
+
+
+
+            <td>@item.ServiceName </td>
+            <td>@item.ServicePrice</td>
+
+
+
+
+        </tr>
+        }
+
+    </tbody>
+
+</table>
+@Html.ActionLink("Back To List", "Index", "ServiceHistory")
+
+
+
+
+
+
+
+
+
+
+
+
+

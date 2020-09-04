@@ -1,0 +1,68 @@
+﻿@model IEnumerable<PSPark.Models.Cars>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Cars</h1>
+
+@Html.ActionLink(" + Add New Car", "New", null,new { @class = "btn btn-primary" })
+
+<table class="table table-bordered table-striped">
+
+    <thead>
+        <tr>
+            <th>Vin</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Style</th>
+            <th>MYear</th>
+            <th>Color</th>
+
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+
+
+
+
+            <td>@item.Vin</td>
+            <td>@item.Make</td>
+            <td>@item.Model</td>
+            <td>@item.Style</td>
+            <td>@item.MYear</td>
+            <td>@item.Color</td>
+
+
+            
+            <td>
+                @Html.ActionLink("Service History", "Index", "ServiceHistory", null, new { @class = "btn btn-primary" })
+                @Html.ActionLink("New Service", "Index", "AddServices", null, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Delete", "Delete", new { id = item.CarsId }, new { @class = "btn btn-danger" })
+
+            </td>
+
+
+        </tr>
+        }
+    </tbody>
+
+</table>
+
+
+
+
+
+
+
+
+
+
+

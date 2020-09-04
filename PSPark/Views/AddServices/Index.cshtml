@@ -1,0 +1,17 @@
+﻿@model PSPark.ViewModel.NewViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index of add Services</h2>
+<td>
+
+    @Html.DropDownListFor(m => m.ServiceDetail.AddServiceId, new SelectList(Model.AddServices, "Id", "ServiceName"), "", new { @class = "form-control" })
+</td>
+<td>
+
+    @Html.ActionLink("Add details of servicing", "New", "ServiceHistory")
+</td>
+
+
+<button type="submit">Add </button>

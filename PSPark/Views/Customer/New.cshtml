@@ -1,0 +1,41 @@
+﻿@model PSPark.Models.Customer
+
+@{
+
+    ViewBag.Title = "New";
+}
+<h2>New Movie</h2>
+
+@using (Html.BeginForm("Save", "Customer"))
+
+{
+
+    <div class="form-group">
+        @Html.LabelFor(c => c.Name)
+        @Html.TextBoxFor(c => c.Name, new { @class = "form-control" })
+
+
+    </div>
+
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(c => c.PhoneNo)
+        @Html.TextBoxFor(c => c.PhoneNo, new { @class = "form-control" })
+
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.Email)
+        @Html.TextBoxFor(c => c.Email, new { @class = "form-control" })
+
+
+    </div>
+
+
+
+
+    <button type="Submit" class="btn btn-primary">Save</button>
+}
+

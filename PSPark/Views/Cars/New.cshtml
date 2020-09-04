@@ -1,0 +1,59 @@
+﻿@model PSPark.Models.Cars
+
+@{
+
+    ViewBag.Title = "New";
+}
+<h2>New Car</h2>
+
+@using (Html.BeginForm("Save", "Cars"))
+
+{
+
+    <div class="form-group">
+        @Html.LabelFor(c => c.Vin)
+        @Html.TextBoxFor(c => c.Vin, new { @class = "form-control" })
+
+
+    </div>
+
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(c => c.Make)
+        @Html.TextBoxFor(c => c.Make, new { @class = "form-control" })
+
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.Model)
+        @Html.TextBoxFor(c => c.Model, new { @class = "form-control" })
+
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.Style)
+        @Html.TextBoxFor(c => c.Style, new { @class = "form-control" })
+
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.MYear)
+        @Html.TextBoxFor(c => c.MYear, new { @class = "form-control" })
+
+
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.Color)
+        @Html.TextBoxFor(c => c.Color, new { @class = "form-control" })
+
+
+    </div>
+
+
+
+
+    <button type="Submit" class="btn btn-primary">Save</button>
+}
+

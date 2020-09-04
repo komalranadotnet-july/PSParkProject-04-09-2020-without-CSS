@@ -1,0 +1,60 @@
+﻿@model IEnumerable<PSPark.Models.Customer>
+
+    @{
+        ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+
+    <h2>Customer List</h2>
+    @Html.ActionLink("Create New Customer", "New")
+
+    <table class="table table-bordered table-striped">
+
+        <thead>
+            <tr>
+                <th> Name</th>
+                <th>Email</th>
+                <th>PhoneNo</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+
+
+
+
+                <td>@item.Name</td>
+                <td>@item.PhoneNo</td>
+                <td>@item.Email</td>
+                <td>
+                    @Html.ActionLink("View Cars", "Index","Cars", null, new { @class = "btn btn-primary" })
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Update", new { id = item.Id })
+                </td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+
+
+            </tr>
+            }
+        </tbody>
+
+    </table>
+
+
+
+
+
+
+
+
+
+
+
